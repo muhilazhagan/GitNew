@@ -9,8 +9,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 @Entity
 @Table(name = "user_details")
 public class User {
@@ -31,7 +29,8 @@ public class User {
 		// TODO Auto-generated constructor stub
 	}
 
-	public User(String userCode, String password, String userName, boolean isActive, boolean isEnabled, String role, Date cr_dt) {
+	public User(String userCode, String password, String userName, boolean isActive, boolean isEnabled, String role,
+			Date cr_dt) {
 		super();
 		this.userCode = userCode;
 		this.password = password;

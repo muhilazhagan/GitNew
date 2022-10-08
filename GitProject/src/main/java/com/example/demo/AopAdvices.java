@@ -23,7 +23,7 @@ public class AopAdvices {
 	}
 
 	@Around(value = "execution(public * com.example.demo.MyController.*(..))")
-	public void aroundCall(ProceedingJoinPoint pjp) throws Throwable {
+	public Object aroundCall(ProceedingJoinPoint pjp) throws Throwable {
 		System.out.println("AOP around startup");
 
 		long start = System.nanoTime();
@@ -31,7 +31,8 @@ public class AopAdvices {
 		long end = System.nanoTime();
 		String methodName = pjp.getSignature().getName();
 		System.out.println("Execution of " + methodName + " Start time " + start + " End Time " + end + " ms");
-		System.out.println("AOP around end");
+		System.out.println("AOP around end : "+retval);
+		return retval;
 	}
 
 	@After("testpc()")
