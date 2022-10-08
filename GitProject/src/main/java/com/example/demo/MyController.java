@@ -19,6 +19,11 @@ public class MyController {
 		System.out.println("Application is up and running!!!");
 	}
 	
+	@GetMapping("/getGitMessage")
+	public void getGitMessage() {
+		System.out.println("Application is up and running!!!");
+	}
+	
 	
 	@PostMapping(value = "/addUser")
 	public User addUser(@RequestBody User user)
@@ -27,6 +32,8 @@ public class MyController {
 		
 		return myService.add_user(user);
 	}
+	
+	
 
 	
 }
